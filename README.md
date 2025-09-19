@@ -1,1 +1,1 @@
-material para el estudio de deep learnin
+material para el estudio de deep learning 
