@@ -1,0 +1,28 @@
+# Instrucciones para cargar el modelo con Binary Focal Loss
+
+Este repositorio contiene:
+
+- `modelo_focal.keras` → modelo entrenado.
+- `custom_losses.py` → definición de la función de pérdida personalizada **Binary Focal Loss**.
+
+---
+
+## 🔹 Opción 1: Solo para predicción (sin recompilar)
+
+Si únicamente desea usar el modelo para **hacer predicciones**, puede cargarlo sin compilar:
+
+```python
+from tensorflow import keras
+
+modelo = keras.models.load_model("modelo_focal.keras", compile=False)
+y_pred = modelo.predict(X_test)
+
+
+
+## Opción 2 con la función full importada
+
+from custom_losses import BinaryFocalLoss   # importa la pérdida personalizada
+from tensorflow import keras
+
+modelo = keras.models.load_model("modelo_focal.keras")
+modelo.summary()
